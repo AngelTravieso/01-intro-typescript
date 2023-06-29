@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Move, PokeAPIResponse } from '../interfaces/pokeapi-respnse.interface';
 
 export class Pokemon {
 
@@ -33,9 +34,9 @@ export class Pokemon {
         console.log(`${ this.name}, ${this.name}`);
     }
 
-    async getMoves() {
+    async getMoves(): Promise<Move[]> { // Retorna un arreglo de movimientos (Move)
         // const moves = 10;
-        const { data } = await axios.get('https://pokeapi.co/api/v2/pokemon/4');
+        const { data } = await axios.get<PokeAPIResponse>('https://pokeapi.co/api/v2/pokemon/4');
         console.log( data.moves );
 
         return data.moves;
@@ -52,7 +53,7 @@ console.log(charmander);
 // charmander.scream();
 // charmander.speak();
 
-console.log( charmander.getMoves() );
+charmander.getMoves();
 
 
 
