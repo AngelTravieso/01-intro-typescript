@@ -9,13 +9,35 @@ export class Pokemon {
     //     this.name = name;
     // }
 
+    // Getter
+    get imageUrl(): string {
+        return `https://pokemon.com/${ this.id }.jpg`;
+    }
+
     // Forma corta (más común)
     // readonly propiedad de solo lectura, no se puede cambiar
-    constructor(public readonly id: number, public name: string) {}
+    constructor(
+        public readonly id: number,
+        public name: string,
+    ) {}
+
+    // Métodos
+    public scream() { // por defecto es public
+        console.log(`${ this.name.toUpperCase() }!!!`);
+        this.speak();
+    }
+
+    public speak() { // private: solo se puede usar dentro de la clase
+        console.log(`${ this.name}, ${this.name}`);
+    }
 
 }
 
-export const charmander = new Pokemon(1, 'Charmander');
+export const charmander = new Pokemon( 4, 'Charmander' );
 
 // charmander.id = 10;
 // charmander.name = 'Mew';
+
+console.log(charmander);
+charmander.scream();
+// charmander.speak();
