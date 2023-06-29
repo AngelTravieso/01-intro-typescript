@@ -2,8 +2,9 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import { pokemons } from './bases/02-objects.ts'
-import { charmander } from './bases/03-classes.ts'
+// import { pokemons } from './bases/02-objects.ts'
+// import { charmander } from './bases/03-classes.ts'
+import { charmander } from './bases/04-injection.ts'
 // import { name, age } from './bases/01-types'
 
 
